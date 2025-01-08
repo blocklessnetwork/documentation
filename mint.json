@@ -33,7 +33,7 @@
         "url": "https://chromewebstore.google.com/detail/bless/pljbjcehnhcnofmkdbjolghdcjnmekia?hl=en"
     },
 
-    "tabs": [{ "name": "Data Reference", "url": "data-reference" }],
+    "tabs": [{ "name": "Build on Bless", "url": "build-on-bless" }],
     "anchors": [
         {
             "name": "X (Twitter)",
@@ -59,6 +59,10 @@
         {
             "group": "Quick Start",
             "pages": ["quick-start/get-started"]
+        },
+        {
+            "group": "Quick Start",
+            "pages": ["build-on-bless/introduction"]
         }
     ],
     "footerSocials": {
