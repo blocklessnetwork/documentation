@@ -1,5 +1,4 @@
 {
-    "$schema": "https://mintlify.com/schema.json",
     "name": "Bless Documentation",
     "theme": "prism",
     "background": { "style": "grid" },
@@ -63,6 +62,10 @@
         {
             "group": "Quick Start",
             "pages": ["build-on-bless/introduction"]
+        },
+        {
+            "group": "Infrastructure",
+            "pages": ["build-on-bless/infrastructure/introduction"]
         }
     ],
     "footerSocials": {
