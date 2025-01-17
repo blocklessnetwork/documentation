@@ -39,12 +39,16 @@
     "anchors": [],
     "navigation": [
         {
-            "group": "Introduction",
+            "group": "Documentation",
             "pages": ["introduction", "support", "community"]
         },
         {
             "group": "Quick Start",
-            "pages": ["quick-start/get-started", "quick-start/extension-node"]
+            "pages": [
+                "quick-start/get-started",
+                "quick-start/extension-node",
+                "quick-start/faq"
+            ]
         },
         {
             "group": "Quick Start",
