@@ -24,7 +24,7 @@
     "topbarLinks": [
         {
             "name": "Home Page",
-            "url": "https://developer.eigenexplorer.com"
+            "url": "https://https://bless.network/"
         }
     ],
     "topbarCtaButton": {
@@ -32,24 +32,11 @@
         "url": "https://chromewebstore.google.com/detail/bless/pljbjcehnhcnofmkdbjolghdcjnmekia?hl=en"
     },
 
-    "tabs": [{ "name": "Build on Bless", "url": "build-on-bless" }],
-    "anchors": [
-        {
-            "name": "X (Twitter)",
-            "icon": "x-twitter",
-            "url": "https://google.com"
-        },
-        {
-            "name": "Discord",
-            "icon": "discord",
-            "url": "https://google.com"
-        },
-        {
-            "name": "Telegram",
-            "icon": "telegram",
-            "url": "https://google.com"
-        }
+    "tabs": [
+        { "name": "Build on Bless", "url": "build-on-bless" },
+        { "name": "Learn", "url": "learn" }
     ],
+    "anchors": [],
     "navigation": [
         {
             "group": "Introduction",
@@ -57,7 +44,7 @@
         },
         {
             "group": "Quick Start",
-            "pages": ["quick-start/get-started"]
+            "pages": ["quick-start/get-started", "quick-start/extension-node"]
         },
         {
             "group": "Quick Start",
@@ -66,13 +53,17 @@
         {
             "group": "Infrastructure",
             "pages": ["build-on-bless/infrastructure/introduction"]
+        },
+        {
+            "group": "Quick Start",
+            "pages": ["learn/introduction"]
         }
     ],
     "footerSocials": {
-        "twitter": "https://twitter.com/eigenexplorer",
-        "telegram": "https://t.me/eigenexplorer",
-        "discord": "https://discord.gg/3aTdnXgGNg",
-        "github": "https://github.com/eigenexplorer"
+        "twitter": "https://x.com/theBlessNetwork",
+        "telegram": "https://t.me/blessnetofficial",
+        "discord": "https://discord.com/invite/blessnetwork",
+        "github": "https://github.com/blessnetwork"
     },
     "feedback": { "thumbsRating": true, "suggestEdit": true }
 }
