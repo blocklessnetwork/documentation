@@ -51,16 +51,35 @@
             ]
         },
         {
-            "group": "Quick Start",
-            "pages": ["build-on-bless/introduction"]
+            "group": "Build on Bless",
+            "pages": [
+                "build-on-bless/introduction",
+                "build-on-bless/what-to-build",
+                "build-on-bless/security"
+            ]
         },
         {
-            "group": "Infrastructure",
-            "pages": ["build-on-bless/infrastructure/introduction"]
+            "group": "Deploy",
+            "pages": [
+                "build-on-bless/deploy/deploy",
+                "build-on-bless/deploy/how-to-use"
+            ]
         },
         {
-            "group": "Quick Start",
-            "pages": ["learn/introduction"]
+            "group": "Cost & Billing",
+            "pages": ["build-on-bless/billing/cost"]
+        },
+        {
+            "group": "Network",
+            "pages": [
+                "learn/network/orchestration",
+                "learn/network/verifiability",
+                "learn/network/runtime"
+            ]
+        },
+        {
+            "group": "Economy",
+            "pages": ["learn/economy/staking-and-rewards"]
         }
     ],
     "footerSocials": {
