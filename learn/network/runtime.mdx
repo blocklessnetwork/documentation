@@ -4,4 +4,22 @@ description: 'How is the Bless Network able to support such a wide range of mach
 icon: 'laptop-binary'
 ---
 
-some text
+Bless employs a robust and secure runtime environment to facilitate decentralized computing across a diverse array of devices. This runtime is pivotal in ensuring that computational tasks are executed efficiently, securely, and in isolation from the host system.
+
+**Key Features of the Bless Runtime:**
+
+1. **WebAssembly (WASM) Foundation:**
+
+   * **Performance:** The runtime leverages an optimizing code generator to produce high-quality machine code swiftly. It is fine-tuned for rapid instantiation and minimal overhead during transitions between the host environment and Wasm modules, supporting the scalability of concurrent instances.
+
+   * **Language Compatibility:** Developers can execute standard bytecode programs compiled from various languages, including C/C++, Rust, Swift, AssemblyScript, and Kotlin. This flexibility allows for the integration of multiple languages within a single application, such as implementing a JavaScript API using Rust.
+
+2. **Security and Isolation:**
+
+   * **Sandboxed Execution:** The runtime operates within a sandboxed environment, ensuring that computational tasks are isolated from the host system. This design prevents unauthorized access to system resources and maintains the integrity of both the node and the application.
+
+   * **Resource Allocation:** Specific system resources like CPU, GPU, and RAM are exclusively allocated for Bless Network applications. This ensures that even when the host device is engaged in resource-intensive activities, the performance of Bless applications remains unaffected.
+
+3. **Customizability:**
+
+   * **Configurable Environment:** The runtime offers a configurable file that provides various options, including imposing additional restrictions on WebAssembly beyond its basic guarantees. This encompasses limits on CPU and memory consumption, allowing for tailored execution environments based on application requirements.

@@ -1,7 +1,27 @@
 ---
-title: 'Verifying Work'
-description: 'How does Bless Network ensure transaction is verifiable?'
-icon: 'lock'
+title: "Verifying Work"
+description: "How does Bless Network ensure transaction is verifiable?"
+icon: "lock"
 ---
 
-Some text
+Bless Network employs a **Dynamic Verification Mechanism** to ensure the integrity and reliability of computational tasks executed across its decentralized platform. This mechanism allows applications to select the most appropriate verification method for each specific task, enhancing both security and efficiency. 
+
+**Key Components of the Dynamic Verification Mechanism:**
+
+1. **Task-Specific Verification Selection:**
+   - Applications can choose from various verification methods tailored to the nature of the computational task. This flexibility ensures that each task is verified using the most suitable approach, optimizing performance and resource utilization.
+
+2. **Consensus Algorithms:**
+   - For tasks that result in binary outcomes (e.g., yes/no decisions), consensus algorithms like Practical Byzantine Fault Tolerance (pBFT) or RAFT are employed. Nodes participate in a voting process to reach agreement on the task's result, ensuring fault tolerance and consistency.
+
+3. **Aggregated Data Validation:**
+   - In scenarios where tasks involve data retrieval, such as obtaining price feeds for cryptocurrencies, nodes collect data and compute a weighted average. This method enhances accuracy and mitigates the impact of outliers or erroneous data points.
+
+**Benefits of the Dynamic Verification Mechanism:**
+
+- **Efficiency:** By selecting verification methods that align with the specific requirements of each task, the network minimizes computational overhead and accelerates processing times.
+
+- **Security:** Tailoring verification approaches to task characteristics reduces vulnerabilities and enhances the overall security posture of the network.
+
+- **Scalability:** The modular nature of the verification mechanism allows the network to handle a diverse range of computational tasks, supporting scalability as the network grows.
+

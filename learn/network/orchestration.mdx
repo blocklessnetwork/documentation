@@ -4,4 +4,60 @@ description: 'How is a workload or transaction dispatched to your node?'
 icon: 'diagram-sankey'
 ---
 
-some text
+In the Bless network, compute workloads are distributed to nodes using a combination of decentralized orchestration, resource optimization, and incentivization mechanisms.
+
+***
+
+#### **1. Developer Submission**
+
+1. **Workload Request:**
+
+   * The Developer submits a compute task via the Bless Command Line Interface (e.g., deploying a static site, running an AI model, or executing a dynamic application).
+
+   * The request includes metadata about the workload, such as:
+
+     * Resource requirements (CPU, RAM, bandwidth)
+
+     * Priority and latency expectations
+
+     * Duration or deadline for task completion
+
+2. **Packaging the Workload:**
+
+   * The workload is encapsulated in a secure and standardized format (e.g., WebAssembly). This ensures compatibility across all nodes in the network.
+
+***
+
+#### **2. Task Routing and Matching**
+
+1. **Node Discovery:**
+
+   * The Bless network maintains a real-time registry of active nodes, their geographic locations, and their available resources.
+
+   * The network then identifies online nodes that match the task’s requirements.
+
+2. **Optimization Algorithms:**
+
+   * To minimize latency, workloads are routed to nodes closest to the user or end-consumer.
+
+   * Tasks are distributed based on resource efficiency, ensuring that no single node is overwhelmed while maximizing network utilization.
+
+3. **Incentive Considerations:**
+
+   * Nodes are prioritized based on their historical performance, uptime, and reliability.
+
+   * Nodes are rewarded proportionally for their contributions.
+
+***
+
+#### **3. Secure Distribution**
+
+1. **Task Encryption:**
+
+   * Workloads are encrypted before being sent to nodes to ensure security and privacy.
+
+   * Each node receives only the data it needs to execute the workload, preventing unauthorized access.
+
+2. **Decentralized Storage Integration:**
+
+   * For tasks requiring large datasets, the workload might reference external storage systems like IPFS or Arweave. Nodes fetch necessary data using secure protocols.
