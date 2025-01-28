@@ -54,7 +54,8 @@
             "group": "Build on Bless",
             "pages": [
                 "build-on-bless/introduction",
-                "build-on-bless/what-to-build",
+                "build-on-bless/installation",
+                "build-on-bless/project-structure",
                 "build-on-bless/security"
             ]
         },

@@ -1,0 +1,24 @@
+---
+title: Project Structure
+description: 'Install the Bless CLI'
+icon: screwdriver-wrench
+---
+
+## Creating a New Project
+
+```bash
+npx blessnet init foo
+cd foo
+```
+
+## Directory Structure
+
+```text
+.
+├── bls.toml              # Project configuration
+├── index.ts              # Entry point
+├── package.json          # Dependencies
+├── tsconfig.base.json    # Base TypeScript config
+├── tsconfig.debug.json   # Debug TypeScript config
+└── tsconfig.release.json # Release TypeScript config
+```

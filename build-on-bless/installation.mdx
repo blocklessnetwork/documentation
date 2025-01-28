@@ -1,0 +1,73 @@
+---
+title: Installation
+description: 'Install the Bless CLI'
+icon: screwdriver-wrench
+---
+
+## Prerequisites
+
+Before installing the Bless CLI, ensure you have:
+
+-   `Node.js` (version 18 or higher)
+-   `npm` (Node Package Manager)
+
+You can check your installed versions using:
+
+```bash
+node -v
+npm -v
+```
+
+If you don’t have Node.js installed, download it from [nodejs.org](https://nodejs.org/).
+
+## Installation
+
+### Quick Start (Recommended)
+
+To start using the Bless CLI immediately, run:
+
+```bash
+npx blessnet
+```
+
+#### First-Time Setup
+
+On your first run, you'll be prompted to install the BLESS Runtime:
+
+```bash
+➜ npx blessnet
+BLESS environment not found. Do you want to install it? (yes/no): y
+✔ Installation successful.
+BLESS environment installed successfully.
+```
+
+After installation, the CLI will be ready to use.
+
+### Global Installation (For Frequent Use)
+
+If you plan to use the Bless CLI regularly, install it globally:
+
+```bash
+npm install -g blessnet
+```
+
+This allows you to run the Bless CLI directly without npx:
+
+```bash
+blessnet
+```
+
+## CLI Help
+
+The Bless CLI provides different responses based on your working directory.
+
+-   Inside a BlessNet project: Displays the project state.
+-   Outside a project: Launches an interactive initializer.
+
+For detailed command options, run:
+
+```bash
+blessnet help
+```
+
+This will display a list of available commands and usage instructions.
