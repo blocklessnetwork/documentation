@@ -54,17 +54,14 @@
             "group": "Build on Bless",
             "pages": [
                 "build-on-bless/introduction",
+                "build-on-bless/support",
                 "build-on-bless/installation",
-                "build-on-bless/project-structure",
-                "build-on-bless/security"
+                "build-on-bless/project-structure"
             ]
         },
         {
             "group": "Deploy",
-            "pages": [
-                "build-on-bless/deploy/deploy",
-                "build-on-bless/deploy/how-to-use"
-            ]
+            "pages": ["build-on-bless/deploy/deploy"]
         },
         {
             "group": "Cost & Billing",

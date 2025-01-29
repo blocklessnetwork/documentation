@@ -1,17 +1,25 @@
 ---
 title: Project Structure
-description: 'Install the Bless CLI'
-icon: screwdriver-wrench
+description: 'Folder and file conventions'
+icon: folder-tree
 ---
 
 ## Creating a New Project
 
+When you create a new Bless project, the Bless CLI automatically sets up a well-structured folder hierarchy. We currently support both JavaScript and TypeScript.
+
+To create a new BlessNet project, run:
+
 ```bash
-npx blessnet init foo
-cd foo
+npx blessnet init my-first-project
+cd my-first-project
 ```
 
+This will generate all the necessary files and folders for your project.
+
 ## Directory Structure
+
+A newly initialized Bless project follows this structure:
 
 ```text
 .
@@ -22,3 +30,25 @@ cd foo
 ├── tsconfig.debug.json   # Debug TypeScript config
 └── tsconfig.release.json # Release TypeScript config
 ```
+
+### File & Folder Breakdown
+
+#### 1. bls.toml (Project Configuration)
+
+Stores global settings and metadata for your Bless project. This file must not be deleted, as the network uses it to manage configurations.
+
+#### 2. index.ts (Main Entry Point)
+
+This is where your project starts execution. Modify this file to define how your application runs.
+
+#### 3. package.json (Dependency Manager)
+
+Handles project dependencies, scripts, and metadata.
+
+#### 4. TypeScript Configurations (tsconfig.\*.json)
+
+| File                    | Purpose                                          |
+| ----------------------- | ------------------------------------------------ |
+| `tsconfig.base.json`    | Shared TypeScript settings for all environments. |
+| `tsconfig.debug.json`   | Optimized for development & debugging.           |
+| `tsconfig.release.json` | Optimized for production builds.                 |
