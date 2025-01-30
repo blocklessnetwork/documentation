@@ -1,0 +1,58 @@
+---
+title: CLI Commands
+description: 'Avilable commands from the Bless CLI'
+icon: command
+---
+
+The **Bless CLI** provides a set of commands to efficiently manage projects, deployments, accounts, and wallets on the Bless Network.
+
+## Project Management
+
+Use the following commands to create, build, and deploy your projects:
+
+-   `init` – Create a new project.
+-   `deploy` – Deploy your project to the Bless Network.
+-   `preview` – Build and launch a local development server.
+-   `manage` – Change the project output type, allowing you to serve a different file format (e.g., HTML for a static site).
+
+To build your project without deploying, run:
+
+```bash
+npx blessnet options build
+```
+
+---
+
+## Account and Wallet Management
+
+Account and wallet management commands can be accessed via the `options` command:
+
+```bash
+npx blessnet options account
+```
+
+### Account Commands
+
+-   `account` – Manage your Bless Network account.
+    -   `account login` – Sign in to your account.
+    -   `account logout` – Sign out of your account.
+
+### Wallet Commands
+
+-   `wallet` – Manage Solana wallets associated with your account.
+
+---
+
+## Getting Help
+
+If you need assistance while using the CLI, use the `help` or `-h` flag to view a list of available commands:
+
+```bash
+npx blessnet help
+```
+
+For help with a specific command, append `help` or `-h` after the command:
+
+```bash
+npx blessnet options account -h
+```

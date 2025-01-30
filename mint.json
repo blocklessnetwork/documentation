@@ -60,8 +60,18 @@
             ]
         },
         {
-            "group": "Deploy",
-            "pages": ["build-on-bless/deploy/deploy"]
+            "group": "CLI",
+            "pages": [
+                "build-on-bless/cli/overview",
+                "build-on-bless/cli/commands"
+            ]
+        },
+        {
+            "group": "Deploy Your App",
+            "pages": [
+                "build-on-bless/deploy/deploy",
+                "build-on-bless/deploy/local-development"
+            ]
         },
         {
             "group": "Cost & Billing",

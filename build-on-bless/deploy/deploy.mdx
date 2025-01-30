@@ -1,10 +1,8 @@
 ---
 title: Deploy Your App
-description: 'Deploy your first project to the Bless Network'
+description: 'Deploy your first app to the Bless Network'
 icon: down-to-bracket
 ---
-
-## Overview
 
 Deploying your app to Bless Network requires just a single command. If you haven't already created a project, start by running:
 
@@ -24,7 +22,7 @@ This command will automatically **build** your application and **deploy** it to 
 -   A **CID (Content Identifier)** for your binary storage on IPFS
 -   A **URL** for accessing your deployed application
 
-### Building and Previewing Locally
+## Building and Previewing Locally
 
 To build and preview your app before deployment, use:
 
@@ -34,12 +32,4 @@ npx blessnet preview
 
 This command **compiles your application** and **launches a local development server**, allowing you to test it before going live.
 
-## Available Commands
-
-The Bless CLI provides the following commands to manage your project:
-
--   **`init`** – Create a new project
--   **`build`** – Build your project (supports the `--debug` flag)
--   **`deploy`** – Deploy your project to the Bless Network
--   **`preview`** – Build and run a local development server
--   **`manage type [newType]`** – Change the project type
+If you just want to build your application, use the `npx blessnet options build` command.
