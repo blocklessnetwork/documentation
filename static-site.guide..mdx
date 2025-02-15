@@ -1,0 +1,285 @@
+---
+title: "The Hitchhiker’s Guide to the Blessnet"
+---
+
+#
+
+You’ve been powering the network, sure. But I’m sure the thought has crossed your mind: “Aren’t there supposed to be things we’re powering?” The answer? Yes. And no.
+
+Because you’re part of that too.
+
+You’ve decided to hitch a ride into building on the Blessnet, and this is your absolute beginner’s guide—no coding experience needed. Just follow along, and by the end, you’ll have your own website up and running on the Blessnet.
+
+It’s gonna be fun. Let’s go.
+
+***
+
+## Pre-Setup: Getting Ready
+
+Before we start building, we need a place to write and run our code. Instead of setting up your whole computer, we’ll use GitHub Codespaces—a free, cloud-based coding environment.
+
+### 🔹 Step 1: Create a GitHub Account (if you don’t have one)
+
+* Go to [GitHub](https://github.com).
+
+* Click **Sign up** and follow the instructions.
+
+### 🔹 Step 2: Set Up GitHub Codespaces
+
+1. Open GitHub and create a new repository (Repo).
+
+2. Click on the **+** in the top right corner.
+
+3. Select **New repository**.
+
+4. Name it something like `my-bless-website`.
+
+5. Check **Add a README** and click **Create repository**.
+
+6. Start a Codespace:
+
+   * Inside your repo, click on **Code → Codespaces → Create Codespace on main**.
+
+🛠 **Alternative:** If you don’t want to use GitHub, you can set up **VS Code** on your local computer instead.
+
+***
+
+## Step 1: Sign-in and Project Creation
+
+Now, let’s install Blessnet and sign in.
+
+### 🔹 Step 1: Open a Terminal
+
+In **GitHub Codespaces**, the terminal is already built in! Just look for it at the bottom of the screen. If you don’t see it, click **View → Terminal**.
+
+### 🔹 Step 2: Install Blessnet
+
+First, install the Bless environment:
+
+```sh
+npx blessnet
+```
+
+Type **y** and press enter to continue.
+
+If Blessnet isn’t installed yet, you’ll see this message:
+
+```
+BLESS environment not found. Do you want to install it? (yes/no):
+```
+
+Type **yes** and press enter to continue.
+
+Congratulations, Hitchhiker! You now have the Blessnet environment installed and can use the `blessnet` command.
+
+### 🔹 Step 3: Create Your First Project
+
+```sh
+npx blessnet init
+```
+
+You will see:
+
+```
+No bls.toml file detected in the current directory.
+Initialize project? (yes/no):
+```
+
+Type **yes**.
+
+It will ask you:
+
+```
+Enter a name for the project:
+```
+
+Type **my-first-site** and press enter.
+
+You will see:
+
+```
+✔ project initialized successful.
+```
+
+This creates a folder called `my-first-site`. Enter the directory:
+
+```sh
+cd my-first-site
+```
+
+### 🔹 Step 4: Login to Bless
+
+Run:
+
+```sh
+npx blessnet account login
+```
+
+Enter your email and verify it.
+
+## Step 2: Build a Simple Website (With Help from ChatGPT)
+
+Now we will create an HTML, CSS, and JavaScript website.
+
+### 🔹 Step 1: Create the Files
+
+In **GitHub Codespaces**, locate the **file explorer** on the left.
+
+1. **Right-click** your project folder → **New Folder** → Name it `public`.
+
+2. **Right-click** `public` → **New File** → Create:
+
+   * `index.html`
+
+   * `style.css`
+
+   * `script.js`
+
+### 🔹 Step 2: Add Code to `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bless Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Blessnet</h1>
+        <img src="https://i.ibb.co/vvbN7FJ/2333232-removebg-preview.png" alt="Custom Image">
+        <h1>This page is brought to you by <em>The Bless Network</em></h1>
+        <button id="alertButton">Click Me</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+```
+
+### 🔹 Step 3: Add Styles to `style.css`
+
+```css
+body {
+    background: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+img {
+    max-width: 300px;
+    border: 5px solid black;
+    border-radius: 15px;
+}
+button {
+    background: black;
+    color: gold;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+button:hover {
+    background: darkgoldenrod;
+    color: black;
+}
+
+```
+
+### 🔹 Step 4: Add Interactivity with `script.js`
+
+```js
+function changeText() {
+    alert("Ouch, why did you do that");
+}
+document.getElementById("alertButton").addEventListener("click", changeText);
+```
+
+### 🔹 Step 5: Edit your `index.ts`
+
+Now go back to your my-first-site folder and find `index.ts`, then replace the code for hello world with this:
+
+```js
+import WebServer from "@blockless/sdk-ts/dist/lib/web";
+const server = new WebServer();
+
+server.statics('public');
+server.start();
+```
+
+## Step 3: Deploy Your Website
+
+Time to launch your website on the **Blessnet**!
+
+### 🔹 Step 1: Build and Preview Your Site
+
+```sh
+npx blessnet preview serve
+```
+
+You will see:
+
+```
+Server listening at http://localhost:3000
+```
+
+Click the link, and your website is live (on your local machine).
+
+### 🔹 Step 2: Deploy to Bless
+
+```sh
+npx blessnet deploy
+```
+
+You’ll get a **deployment URL**, like:
+
+```
+Deployment URL: https://your-website.bls.dev
+```
+
+🎉 **Congrats! Your website is now live!**
+
+## Step 4: Use AI to Build and Edit Your Website
+
+Want to make changes? **ChatGPT can help!**
+
+### 🔹 Example Prompts for AI:
+
+* **HTML:** "Add a contact form with Name, Email, and Message fields."
+
+* **CSS:** "Make my website modern with a dark theme."
+
+* **JavaScript:** "Make my button change the background color when clicked."
+
+### 🔹 How to Update Your Site:
+
+1. **Copy the new code** from ChatGPT.
+
+2. **Open your file** in GitHub Codespaces.
+
+3. **Paste the updated code** into the correct file.
+
+4. **Save the file (Ctrl + S / Cmd + S).**
+
+5. **Preview changes:**
+
+```sh
+npx blessnet preview serve
+```
+
+1. **Deploy the new version:**
+
+```sh
+npx blessnet deploy
+```
+
+Your Blessnet site is officially out in the wild, powered by the **world’s first shared computer**.
+
+**Stay Blessed!** 🚀
