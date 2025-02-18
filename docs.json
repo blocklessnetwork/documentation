@@ -1,0 +1,118 @@
+{
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "mint",
+    "name": "Bless Documentation",
+    "colors": {
+        "primary": "#71717a",
+        "light": "#ffffff",
+        "dark": "#27272a"
+    },
+    "favicon": "/public/logo.svg",
+    "navigation": {
+        "tabs": [
+            {
+                "tab": "Documentation",
+                "groups": [
+                    {
+                        "group": "Documentation",
+                        "pages": [
+                            "welcome",
+                            "introduction",
+                            "support",
+                            "community"
+                        ]
+                    },
+                    {
+                        "group": "Extension Node",
+                        "pages": [
+                            "extension-node/get-started",
+                            "extension-node/faq",
+                            "extension-node/trouble-shooting"
+                        ]
+                    }
+                ]
+            },
+            {
+                "tab": "Build on Bless",
+                "groups": [
+                    {
+                        "group": "Build on Bless",
+                        "pages": [
+                            "build-on-bless/introduction",
+                            "build-on-bless/support",
+                            "build-on-bless/installation",
+                            "build-on-bless/project-structure"
+                        ]
+                    },
+                    {
+                        "group": "CLI",
+                        "pages": [
+                            "build-on-bless/cli/overview",
+                            "build-on-bless/cli/commands"
+                        ]
+                    },
+                    {
+                        "group": "Deploy Your App",
+                        "pages": [
+                            "build-on-bless/deploy/deploy",
+                            "build-on-bless/deploy/local-development"
+                        ]
+                    },
+                    {
+                        "group": "Cost & Billing",
+                        "pages": ["build-on-bless/billing/cost"]
+                    }
+                ]
+            },
+            {
+                "tab": "Learn",
+                "groups": [
+                    {
+                        "group": "Network",
+                        "pages": [
+                            "learn/network/orchestration",
+                            "learn/network/verifiability",
+                            "learn/network/runtime"
+                        ]
+                    },
+                    {
+                        "group": "Economy",
+                        "pages": ["learn/economy/staking-and-rewards"]
+                    }
+                ]
+            }
+        ]
+    },
+    "logo": {
+        "light": "/public/logo/light.svg",
+        "dark": "/public/logo/dark.svg"
+    },
+    "background": {
+        "decoration": "grid",
+        "color": {
+            "light": "#ffffff",
+            "dark": "#131419"
+        }
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Home Page",
+                "href": "https://bless.network/"
+            }
+        ],
+        "primary": {
+            "type": "button",
+            "label": "Get Extension Node",
+            "href": "https://chromewebstore.google.com/detail/bless/pljbjcehnhcnofmkdbjolghdcjnmekia?hl=en"
+        }
+    },
+    "footer": {
+        "socials": {
+            "twitter": "https://x.com/theBlessNetwork",
+            "telegram": "https://t.me/blessnetofficial",
+            "discord": "https://discord.com/invite/blessnetwork",
+            "github": "https://github.com/blessnetwork"
+        }
+    }
+}
