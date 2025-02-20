@@ -1,136 +1,94 @@
 ---
 title: 'Hosting Static Websites'
-description: 'Publish a static website to the Bless Network'
+description: 'Deploy a static website on the Bless Network in minutes'
 icon: browser
 iconType: regular
 ---
 
-One of the easiest things you can do to build on the Bless Network is to publish your very own static website. It could be your personal website or a website to host memes.
+Ready to launch your website into the decentralized world? Whether you're building a personal blog, a meme page, or just experimenting with web development, we'll help you get your site up and running on the Bless Network in no time.
 
-Here we will show you a simple, one-page website you can follow along and ship to the Bless Network under 10 minutes.
+This guide is perfect for beginners, but even if you're an experienced developer, you might pick up some cool tricks along the way. Let's dive in!
 
 ---
 
-## Pre-requisites
+## Before We Start
 
-Before publishing your first static website to the Bless Network, you will need to install the Bless CLI. If you haven't already, follow the [installation guide](../installation) to download the Bless CLI.
+Before you begin, you'll need:
 
-Now, let’s install Blessnet and sign in.
+-   The Bless CLI installed on your computer ([hop over to our installation guide](../installation))
+-   Some basic HTML, CSS, and JavaScript knowledge (but don't worry, we'll provide all the code you need!)
 
-### 🔹 Step 1: Open a Terminal
+---
 
-In **GitHub Codespaces**, the terminal is already built in! Just look for it at the bottom of the screen. If you don’t see it, click **View → Terminal**.
+## Let's Get Started
 
-### 🔹 Step 2: Install Blessnet
+### Create Your Project Space
 
-First, install the Bless environment:
-
-```sh
-npx blessnet
-```
-
-Type **y** and press enter to continue.
-
-If Blessnet isn’t installed yet, you’ll see this message:
-
-```
-BLESS environment not found. Do you want to install it? (yes/no):
-```
-
-Type **yes** and press enter to continue.
-
-Congratulations, Hitchhiker! You now have the Blessnet environment installed and can use the `blessnet` command.
-
-### 🔹 Step 3: Create Your First Project
+First, fire up your terminal and run this command to create your new project:
 
 ```sh
 npx blessnet init
 ```
 
-You will see:
+When it asks for a name, pick something fun (like `my-awesome-site`). This will create your project template where all the magic will happen.
 
-```
-No bls.toml file detected in the current directory.
-Initialize project? (yes/no):
-```
-
-Type **yes**.
-
-It will ask you:
-
-```
-Enter a name for the project:
-```
-
-Type **my-first-site** and press enter.
-
-You will see:
-
-```
-✔ project initialized successful.
-```
-
-This creates a folder called `my-first-site`. Enter the directory:
+Next, let's move into your new project:
 
 ```sh
-cd my-first-site
+cd my-awesome-site
 ```
 
-### 🔹 Step 4: Login to Bless
+### Quick Login Check
 
-Run:
+Before we proceed further, let's make sure you're logged in:
 
 ```sh
 npx blessnet account login
 ```
 
-Enter your email and verify it.
+Just follow the email verification prompts, and you'll be good to go!
 
-## Step 2: Build a Simple Website (With Help from ChatGPT)
+---
 
-Now we will create an HTML, CSS, and JavaScript website.
+## Building the Website
 
-### 🔹 Step 1: Create the Files
+### Set Up Your Canvas
 
-In **GitHub Codespaces**, locate the **file explorer** on the left.
+Create a new folder called `public` - this is where all your website files will live. If you want to do it using the terminal, run:
 
-1. **Right-click** your project folder → **New Folder** → Name it `public`.
+```sh
+mkdir public
+```
 
-2. **Right-click** `public` → **New File** → Create:
+### Create Your First Files
 
-    - `index.html`
+Let's create three files that will bring your website to life. Don't worry about typing everything perfectly - just copy and paste - we'll walk through each component:
 
-    - `style.css`
+1. `index.html` - This is your main page that visitors will see
+2. `style.css` - Makes your website visually appealing with custom styling
+3. `script.js` - Adds interactive features to engage your visitors
 
-    - `script.js`
-
-### 🔹 Step 2: Add Code to `index.html`
-
-```html
+<CodeGroup>
+```html index.html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Bless Network</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="container">
-            <h1>Welcome to Blessnet</h1>
-            <img
-                src="https://i.ibb.co/vvbN7FJ/2333232-removebg-preview.png"
-                alt="Custom Image"
-            />
-            <h1>This page is brought to you by <em>The Bless Network</em></h1>
-            <button id="alertButton">Click Me</button>
-        </div>
-        <script src="script.js"></script>
-    </body>
+<head>
+    <title>Bless Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Blessnet</h1>
+        <img src="https://i.ibb.co/vvbN7FJ/2333232-removebg-preview.png" alt="Bless Network">
+        <h1>Powered by <em>The Bless Network</em></h1>
+        <button id="alertButton">Click Me</button>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
 ```
 
-### 🔹 Step 3: Add Styles to `style.css`
-
-```css
+```css style.css
 body {
     background: gold;
     display: flex;
@@ -163,20 +121,22 @@ button:hover {
 }
 ```
 
-### 🔹 Step 4: Add Interactivity with `script.js`
-
-```js
+```js script.js
 function changeText() {
     alert('Ouch, why did you do that');
 }
 document.getElementById('alertButton').addEventListener('click', changeText);
 ```
 
-### 🔹 Step 5: Edit your `index.ts`
+</CodeGroup>
 
-Now go back to your my-first-site folder and find `index.ts`, then replace the code for hello world with this:
+### Set Up Your Simple Server
 
-```js
+We are almost there!
+
+Let's edit the `index.ts` file in the project root (you need to go back from the `public` folder where you just added the three files). This creates a simple server that will send the three files you just created to the browser accessing your website.
+
+```js index.ts
 import WebServer from '@blockless/sdk-ts/dist/lib/web';
 const server = new WebServer();
 
@@ -184,72 +144,36 @@ server.statics('public');
 server.start();
 ```
 
-## Step 3: Deploy Your Website
+---
 
-Time to launch your website on the **Blessnet**!
+## Time to Launch
 
-### 🔹 Step 1: Build and Preview Your Site
+Now, we are ready to deploy and see your webiste in production!
 
-```sh
-npx blessnet preview serve
-```
+### Test Drive Locally
 
-You will see:
-
-```
-Server listening at http://localhost:3000
-```
-
-Click the link, and your website is live (on your local machine).
-
-### 🔹 Step 2: Deploy to Bless
-
-```sh
-npx blessnet deploy
-```
-
-You’ll get a **deployment URL**, like:
-
-```
-Deployment URL: https://your-website.bls.dev
-```
-
-🎉 **Congrats! Your website is now live!**
-
-## Step 4: Use AI to Build and Edit Your Website
-
-Want to make changes? **ChatGPT can help!**
-
-### 🔹 Example Prompts for AI:
-
--   **HTML:** "Add a contact form with Name, Email, and Message fields."
-
--   **CSS:** "Make my website modern with a dark theme."
-
--   **JavaScript:** "Make my button change the background color when clicked."
-
-### 🔹 How to Update Your Site:
-
-1. **Copy the new code** from ChatGPT.
-
-2. **Open your file** in GitHub Codespaces.
-
-3. **Paste the updated code** into the correct file.
-
-4. **Save the file (Ctrl + S / Cmd + S).**
-
-5. **Preview changes:**
+Before we show the world, let's make sure everything looks perfect. Run the following command to test your website locally on your computer.
 
 ```sh
 npx blessnet preview serve
 ```
 
-1. **Deploy the new version:**
+Visit `http://localhost:3000` to see the website you just created come to life!
+
+### Deploy to Bless
+
+Now it's finally time to deploy your website to the Bless Network and show it off to the world!
+
+To do that, run:
 
 ```sh
 npx blessnet deploy
 ```
 
-Your Blessnet site is officially out in the wild, powered by the **world’s first shared computer**.
+Congratulations! Your site is now live on the Bless Network! You'll get a URL like `https://your-awesome-site.bls.dev` that you can share with everyone.
 
-**Stay Blessed!** 🚀
+---
+
+## Trouble Shooting
+
+If you encounter any problems that you cannot solve, we are here to help. Simply start a thread on the [Bless Forum](https://github.com/orgs/blessnetwork/discussions) on GitHub and we will typically respond within **48 hours**.

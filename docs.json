@@ -61,6 +61,10 @@
                     {
                         "group": "Cost & Billing",
                         "pages": ["build-on-bless/billing/cost"]
+                    },
+                    {
+                        "group": "Tutorials",
+                        "pages": ["build-on-bless/tutorials/static-site"]
                     }
                 ]
             },
