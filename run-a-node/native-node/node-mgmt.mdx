@@ -1,0 +1,55 @@
+---
+title: 'Managing Your Node'
+description: 'Guide to managing a Bless Node with logs, shutdown, and identity persistence'
+icon: 'list-check'
+---
+
+This guide covers essential commands for managing your Bless Node, including checking logs, stopping, and removing your node. It also explains how to persist your node identity to prevent resets when restarting or removing the container.  
+
+## Checking Node Logs  
+
+To monitor your node’s activity, use:  
+
+```bash Terminal
+docker logs -f blessnetwork-node
+```
+
+## Stopping the Node  
+
+To stop your running node, execute:  
+
+```bash Terminal
+docker stop blessnetwork-node
+```
+
+## Removing the Node  
+
+If you need to remove your node container, run:  
+
+```bash Terminal
+docker rm blessnetwork-node
+```
+
+
+## Persisting Your Node Identity  
+
+By default, your node identity resets if the container is removed. To prevent this, you can either store it locally using a volume or back up your identity to S3.  
+
+### Option 1: Store Identity Locally (Recommended)  
+
+To ensure your node identity persists across restarts or container removals, map a local volume:  
+
+```bash Terminal
+docker run -d \
+  --name blessnetwork-node \
+  -p 9527:9527 \
+  --env-file .env \
+  -v ${PWD}/node-data:/app/keys \
+  ghcr.io/blessnetwork/b7s:0.6.6.patch3
+```
+
+This stores your node identity in the `node-data/` directory, preventing it from being lost when the container is removed.  
+
+### Option 2: Backup to S3 (Cloud Storage)  
+
+If you prefer cloud-based storage, configure your `.env` file with the necessary S3 environment variables. This enables automatic backups of your node identity.  
