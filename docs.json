@@ -23,11 +23,28 @@
                         ]
                     },
                     {
-                        "group": "Extension Node",
+                        "group": "Run a Node",
                         "pages": [
-                            "extension-node/get-started",
-                            "extension-node/faq",
-                            "extension-node/trouble-shooting"
+                            "run-a-node/introduction",
+                            "run-a-node/faq",
+                            {
+                                "group": "Extension Node",
+                                "icon": "window",
+                                "pages": [
+                                    "run-a-node/extension-node/get-started",
+                                    "run-a-node/extension-node/trouble-shooting"
+                                ]
+                            },
+                            {
+                                "group": "Native Node",
+                                "icon": "grid-2",
+                                "pages": [
+                                    "run-a-node/native-node/get-started",
+                                    "run-a-node/native-node/node-mgmt",
+                                    "run-a-node/native-node/trouble-shooting"
+                                ]
+                            }
+                            
                         ]
                     }
                 ]

@@ -1,0 +1,35 @@
+---
+title: 'Trouble Shooting'
+description: 'Trouble shooting your Bless Extenxion Node'
+icon: 'wrench'
+---
+
+If you're experiencing issues with the Bless Native Node, this guide provides solutions to the most common problems. If the issue persists, please open a support ticket in the [Bless Discord](https://discord.com/invite/blessnetwork) for further assistance.
+
+<Accordion title='Node won’t start?'>
+
+    1. Check if port **9527** is already in use  
+
+        Run the following command to check:  
+
+        ```bash Terminal
+        sudo lsof -i :9527
+        ```
+
+        If the port is in use, either stop the conflicting process or change the port in your Docker command.
+
+    2. Verify your `.env` file  
+
+        Ensure all required values are correctly entered and formatted. 
+
+    3.  Check Docker logs for errors  
+
+        Run the following command to inspect logs:  
+
+        ```bash Terminal
+        docker logs blessnetwork-node
+        ```
+    4. Ensure your internet connection is stable  
+
+        A weak or unstable internet connection may prevent your node from connecting to the network.
+</Accordion>

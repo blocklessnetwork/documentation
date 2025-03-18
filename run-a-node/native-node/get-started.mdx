@@ -1,0 +1,53 @@
+---
+title: 'Get Started'
+description: 'A simple guide to setting up and running a native Bless Node using Docker.'
+icon: 'circle-nodes'
+---
+
+This guide will walk you through installing and running a **Bless Native Node** using Docker.  
+
+## Prerequisites  
+
+Before you begin, ensure you have the following:  
+
+- A machine (Mac, Windows, or Linux) with internet access.
+- Docker installed. If not [download here](https://docs.docker.com/get-docker/). 
+
+## Quick Start
+
+### 1. Create a `.env` Configuration File  
+
+First, create a new folder for your node setup. Inside this folder, create a `.env` file and add the following configuration:  
+
+```properties .env
+NODE_ROLE=worker
+BOOT_NODES=/ip4/143.244.211.194/tcp/9010/p2p/12D3KooWGuBya7RYHTzZmR7uLJYUXffSPuBUPKnmYSfsgwyjqFuw
+
+# (Optional) S3 Backup Configuration
+AWS_ACCESS_KEY_ID=<s3_id>
+AWS_SECRET_ACCESS_KEY=<s3_key>
+KEY_PATH=<backup_key_path>
+KEY_PASSWORD=<key_password>
+```
+
+<Note>Replace `<s3_id>`, `<s3_key>`, `<backup_key_path>`, and `<key_password>` with your actual credentials if using S3 backup. </Note> 
+
+### 2. Start Your Bless Node  
+
+Navigate to the folder where your `.env` file is located and run the following command in your terminal to start your node:  
+
+```bash Terminal
+docker run -d \
+  --name blessnetwork-node \
+  -p 9527:9527 \
+  --env-file .env \
+  ghcr.io/blessnetwork/b7s:0.6.6.patch3
+```
+
+## Next Steps  
+
+Your **Bless Node** should now be up and running, actively contributing to the network!
+
+Now it's time to **manage your node** and ensure optimal performance. Check out our [Node Management Guide](./node-mgmt) for detailed instructions on monitoring, stopping, and backing up your node.  
+
+If you need further assistance, visit our [Support Channel](../../support) for help from the community and support team.  
