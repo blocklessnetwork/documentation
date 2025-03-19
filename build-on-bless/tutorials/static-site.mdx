@@ -142,7 +142,7 @@ Let's edit the `index.ts` file in the project root (you need to go back from the
 import WebServer from '@blockless/sdk-ts/dist/lib/web';
 const server = new WebServer();
 
-server.statics('public');
+server.statics('public', '/');
 server.start();
 ```
 
