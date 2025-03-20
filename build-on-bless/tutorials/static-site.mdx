@@ -1,15 +1,15 @@
 ---
-title: 'Hosting Static Websites'
-description: 'Deploy a static website on the Bless Network in minutes'
-icon: browser
-iconType: regular
+title: "Hosting Static Websites"
+description: "Deploy a static website on the Bless Network in minutes"
+icon: "browser"
+iconType: "regular"
 ---
 
 Ready to launch your website into the decentralized world? Whether you're building a personal blog, a meme page, or just experimenting with web development, we'll help you get your site up and running on the Bless Network in no time.
 
-This guide is perfect for beginners, but even if you're an experienced developer, you might pick up some cool tricks along the way. 
+This guide is perfect for beginners, but even if you're an experienced developer, you might pick up some cool tricks along the way.
 
-Let's dive in!
+Let's dive in\\\\!
 
 ---
 
@@ -17,8 +17,8 @@ Let's dive in!
 
 Before you begin, you'll need:
 
--   The Bless CLI installed on your computer ([hop over to our installation guide](../installation))
--   Some basic HTML, CSS, and JavaScript knowledge (but don't worry, we'll provide all the code you need!)
+- The Bless CLI installed on your computer ([hop over to our installation guide](../installation))
+- Some basic HTML, CSS, and JavaScript knowledge (but don't worry, we'll provide all the code you need\\\\!)
 
 ---
 
@@ -48,7 +48,7 @@ Before we proceed further, let's make sure you're logged in:
 npx blessnet account login
 ```
 
-Just follow the email verification prompts, and you'll be good to go!
+Just follow the email verification prompts, and you'll be good to go\\\\!
 
 ---
 
@@ -71,6 +71,7 @@ Let's create three files that will bring your website to life. Don't worry about
 3. `script.js` - Adds interactive features to engage your visitors
 
 <CodeGroup>
+
 ```html index.html
 <!DOCTYPE html>
 <html lang="en">
@@ -89,6 +90,7 @@ Let's create three files that will bring your website to life. Don't worry about
 </body>
 </html>
 ```
+
 
 ```css style.css
 body {
@@ -123,6 +125,7 @@ button:hover {
 }
 ```
 
+
 ```js script.js
 function changeText() {
     alert('Ouch, why did you do that');
@@ -134,7 +137,7 @@ document.getElementById('alertButton').addEventListener('click', changeText);
 
 ### Set Up Your Simple Server
 
-We are almost there!
+We are almost there\\!
 
 Let's edit the `index.ts` file in the project root (you need to go back from the `public` folder where you just added the three files). This creates a simple server that will send the three files you just created to the browser accessing your website.
 
@@ -142,7 +145,7 @@ Let's edit the `index.ts` file in the project root (you need to go back from the
 import WebServer from '@blockless/sdk-ts/dist/lib/web';
 const server = new WebServer();
 
-server.statics('public');
+server.statics('public', '/');
 server.start();
 ```
 
@@ -152,6 +155,7 @@ server.start();
 
 Now, we are ready to deploy and see your website in production!
 
+
 ### Test Drive Locally
 
 Before we show the world, let's make sure everything looks perfect. Run the following command to test your website locally on your computer.
@@ -160,11 +164,11 @@ Before we show the world, let's make sure everything looks perfect. Run the foll
 npx blessnet preview serve
 ```
 
-Visit `http://localhost:3000` to see the website you just created come to life!
+Visit `http://localhost:3000` to see the website you just created come to life\\\\!
 
 ### Deploy to Bless
 
-Now it's finally time to deploy your website to the Bless Network and show it off to the world!
+Now it's finally time to deploy your website to the Bless Network and show it off to the world\\\\!
 
 To do that, run:
 
@@ -172,7 +176,7 @@ To do that, run:
 npx blessnet deploy
 ```
 
-Congratulations! Your site is now live on the Bless Network! You'll get a URL like `https://your-awesome-site.bls.dev` that you can share with everyone.
+Congratulations\\\\! Your site is now live on the Bless Network\\\\! You'll get a URL like `https://your-awesome-site.bls.dev` that you can share with everyone.
 
 ---
 
