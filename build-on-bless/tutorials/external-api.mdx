@@ -1,0 +1,60 @@
+---
+title: "External API Calls"
+description: "How to integrate external API for your app or service on Bless"
+---
+
+**A Quickstart Guide for Using API’s on the Blessnet**
+
+To connect your project to an external API, you’ll need to update your `bls.toml` file with the right permissions before deploying.
+
+## Step 1: Add API Domains to Your `bls.toml`
+
+Open your `bls.toml` file and, under the `[deployment]` section, add a `permissions` line listing your API domains:
+
+```toml
+[deployment]
+permission = "public"
+nodes = 1
+permissions = [ "https://yourapiwebsite/" ]
+```
+
+- **Replace** `https://yourapiwebsite/` with your actual API's base URL.
+- **Include the full domain and protocol** (e.g., `https://api.example.com/` not just `example.com`).
+- **Subdomains must be separately listed.** If you're using both `https://example.com/` and `https://api.example.com/`, you need both in your permissions array.
+
+Example with multiple APIs:
+
+```toml
+[deployment]
+permission = "public"
+nodes = 1
+permissions = [ "https://api.example1.com/", "https://api.example2.com/" ]
+```
+
+---
+
+## Step 2: Call APIs in Your Code
+
+Once your API domains are set up, you can make calls using `fetch` like you normally would:
+
+```jsx
+async function getData() {
+  const response = await fetch("https://yourapiwebsite/data");
+  const data = await response.json();
+  console.log(data);
+}
+
+getData();
+```
+
+- `Only fetch is supported` now.
+- **The requested URL must exactly match** what you set in `permissions`.
+
+---
+
+## Important Notes
+
+- **Permissions are locked at deploy time.** You can’t update them later without redeploying.
+- **HTTPS only.** The Shared Computer rejects non-secure HTTP API calls.
+- **CORS is your responsibility.** Bless doesn’t modify CORS headers. Make sure the API you’re calling allows cross-origin requests.
+- **Security first.** Only trusted, necessary APIs should be listed.
