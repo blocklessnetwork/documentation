@@ -81,7 +81,8 @@
                     },
                     {
                         "group": "Tutorials",
-                        "pages": ["build-on-bless/tutorials/static-site"]
+                        "pages": ["build-on-bless/tutorials/static-site",
+                                  "build-on-bless/tutorials/external-api"]
                     }
                 ]
             },
