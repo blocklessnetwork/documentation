@@ -1,0 +1,114 @@
+---
+title: "Space and Time Database"
+description: "Query blockchain data using Space and Time in your Bless app"
+icon: database
+---
+
+[Space and Time](https://spaceandtime.io) is a decentralized data warehouse that lets you run SQL queries against blockchain data, off-chain datasets, or your own custom tables with built-in cryptographic verifiability.
+
+This guide shows how to integrate Space and Time with your Bless app using a simple Bitcoin transactions query example.
+
+By the end of this guide, you will:
+- Register a temporary user
+- Authenticate and obtain an access token
+- Run a SQL query to fetch Bitcoin transaction data
+
+## Quick Notes
+
+- A random user is generated for each run in this demo. For production use, replace this with fixed credentials.
+- An API key from your Space and Time account is required, even for development environments.
+- The example runs entirely client-side, making it suitable for local development or WASM environments such as Bless nodes.
+
+For full API details, refer to the Space and [Time API Documentation](https://docs.makeinfinite.com/reference/secrets-proxy-overview).
+
+
+## Full Example (JS)
+
+```js
+function generateRandomPrefix(length = 4) {
+	const chars = 'abcdefghijklmnopqrstuvwxyz'
+	let result = ''
+	for (let i = 0; i < length; i++) {
+		result += chars[Math.floor(Math.random() * chars.length)]
+	}
+	return result
+}
+
+async function registerAndQuery() {
+	const baseUrl = 'https://proxy.api.makeinfinite.dev'
+	const randomPrefix = generateRandomPrefix()
+	const userId = `${randomPrefix}_your_username_here`
+	const password = 'this_is_password_for_above_user_in_the_worker'
+
+	try {
+        // Step 1: Register user
+		const authResponse = await fetch(`${baseUrl}/auth/register`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ userId, password })
+		})
+
+		if (!authResponse.ok) {
+			console.error('Auth failed:', await authResponse.text())
+			return
+		}
+
+		const { accessToken } = await authResponse.json()
+		console.log('✅ Auth success')
+
+        // Step 2: Run SQL query
+		const queryResponse = await fetch(`${baseUrl}/v1/sql`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${accessToken}`,
+				apikey: `sxt_YOUR_API_KEY_HERE`
+			},
+			body: JSON.stringify({
+				sqlText: 'SELECT * FROM bitcoin.transactions LIMIT 5'
+			})
+		})
+
+		if (!queryResponse.ok) {
+			console.error('Query failed:', await queryResponse.text())
+			return
+		}
+
+		const result = await queryResponse.json()
+		console.log('📦 Query result:', result)
+	} catch (error) {
+		console.error('Error:', error)
+	}
+}
+
+;(async () => {
+	console.log('🚀 Starting Space and Time Demo')
+	await registerAndQuery()
+	console.log('✅ Done')
+})()
+```
+
+## Example Output
+
+Running a simple query:
+
+```sql
+SELECT * FROM bitcoin.transactions LIMIT 5;
+```
+
+Returns results like:
+
+```json
+[
+  {
+    "BLOCK_NUMBER": 891172,
+    "TIME_STAMP": "2025-04-06 08:18:45",
+    "TXID": "24d20504131cc44b939c07afded95d0ae97a618710688560a5a8f27d8e00f663",
+    "OUTPUTS_VALUE": "1797650",
+    "INPUT_COUNT": 1,
+    "OUTPUT_COUNT": 2,
+    ...
+  },
+  ...
+]
+```
