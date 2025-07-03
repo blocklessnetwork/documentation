@@ -44,7 +44,6 @@
                                     "run-a-node/native-node/trouble-shooting"
                                 ]
                             }
-                            
                         ]
                     }
                 ]
@@ -77,12 +76,22 @@
                     },
                     {
                         "group": "Cost & Billing",
-                        "pages": ["build-on-bless/billing/cost"]
+                        "pages": [
+                            "build-on-bless/billing/cost"
+                        ]
                     },
                     {
                         "group": "Tutorials",
-                        "pages": ["build-on-bless/tutorials/static-site",
-                                  "build-on-bless/tutorials/external-api"]
+                        "pages": [
+                            "build-on-bless/tutorials/static-site",
+                            "build-on-bless/tutorials/external-api"
+                        ]
+                    },
+                    {
+                        "group": "Integrationss",
+                        "pages": [
+                            "build-on-bless/integrations/space-and-time"
+                        ]
                     }
                 ]
             },
@@ -99,7 +108,9 @@
                     },
                     {
                         "group": "Economy",
-                        "pages": ["learn/economy/staking-and-rewards"]
+                        "pages": [
+                            "learn/economy/staking-and-rewards"
+                        ]
                     }
                 ]
             }
