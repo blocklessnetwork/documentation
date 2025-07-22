@@ -90,7 +90,8 @@
                     {
                         "group": "Integrationss",
                         "pages": [
-                            "build-on-bless/integrations/space-and-time"
+                            "build-on-bless/integrations/space-and-time",
+                            "build-on-bless/integrations/monad"
                         ]
                     }
                 ]

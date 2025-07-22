@@ -1,0 +1,50 @@
+---
+title: "Monad Blockchain"
+description: "Query on-chain data or initiate transactions from the Monad blockchain in your Bless app"
+icon: cubes
+---
+
+[Monad](https://monad.xyz) is a high-throughput, EVM-compatible Layer 1 blockchain that exposes the familiar JSON-RPC 2.0 interface. With the Bless SDK’s `fetch` function you can retrieve blocks, initiate transactions, and more, all with a single HTTP POST request. This approach works perfectly in client-side or WASM environments such as Bless nodes.
+
+This guide demonstrates a **minimal “latest block” query** using a public testnet RPC. Feel free to substitute another provider (Alchemy, QuickNode, Ankr, etc.) if you need higher rate limits.
+
+By the end of this guide you will:
+
+- Select a public RPC endpoint
+- Call `eth_blockNumber`
+- Convert the hexadecimal result to a decimal block height
+
+## Quick Notes
+
+- **No authentication tokens are required** for public endpoints, but each RPC provider enforces its own rate limits. For production workloads, request an API key from a provider like Alchemy or QuickNode to increase those limits.
+
+## Full Example (JS/TS)
+
+```ts
+async function getEthBlockNumber(url: string) {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      jsonrpc: '2.0',
+      id: 1,
+      method: 'eth_blockNumber',
+      params: []
+    })
+  })
+  const data = await response.json()
+  const blockNumber = parseInt(data.result, 16)
+  console.log(`Latest block: ${blockNumber} (0x${data.result})`)
+}
+
+// Get the latest block number from the Monad testnet
+getEthBlockNumber('https://rpc.ankr.com/monad_testnet').catch(console.error)
+```
+
+### Example Output
+
+```
+Latest Monad block: 27375104 (0x1a1b2c0)
+```
+
+With this snippet, you now have a lightweight, dependency-free way to pull on-chain state from Monad directly in your Bless app. Happy building!
