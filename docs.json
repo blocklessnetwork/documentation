@@ -106,12 +106,6 @@
                             "learn/network/verifiability",
                             "learn/network/runtime"
                         ]
-                    },
-                    {
-                        "group": "Economy",
-                        "pages": [
-                            "learn/economy/staking-and-rewards"
-                        ]
                     }
                 ]
             }
